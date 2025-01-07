@@ -1,17 +1,17 @@
 {
-    "name": "nueip/phpspreadsheet-helper",
+    "name": "dream-rhythm/phpspreadsheet-helper",
     "description": "PHP Excel Helper - Write and read Spreadsheet with easy way based on PhpSpreadsheet",
     "keywords": ["PhpSpreadsheet", "PHPExcel", "php", "excel", "sheet", "PhpSpreadsheet helper"],
-    "homepage": "https://github.com/nueip/phpspreadsheet-helper",
+    "homepage": "https://github.com/dream-rhythm/phpspreadsheet-helper",
     "type": "library",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/nueip/phpspreadsheet-helper/issues",
-        "source": "https://github.com/nueip/phpspreadsheet-helper"
+        "issues": "https://github.com/dream-rhythmphpspreadsheet-helper/issues",
+        "source": "https://github.com/dream-rhythm/phpspreadsheet-helper"
     },
     "minimum-stability": "stable",
     "require": {
-        "phpoffice/phpspreadsheet": "^1.28|^1.8|^1.1"
+        "phpoffice/phpspreadsheet": "^3|^1.28|^1.8|^1.1"
     },
     "autoload": {
         "classmap": ["src/phpSpreadsheet"]
