@@ -376,11 +376,13 @@ class Helper
                 // Cached column alpha
                 $colAlpha = self::num2alpha($posCol);
 
+                $writeCell = self::colAndRow2CellName($posCol, self::$_offsetRow);
+
                 // Set value
                 if (isset($dataType)) {
-                    $sheetObj->setCellValueExplicitByColumnAndRow($posCol, self::$_offsetRow, $value, $dataType);
+                    $sheetObj->setCellValueExplicit($writeCell, $value, $dataType);
                 } else {
-                    $sheetObj->setCellValueByColumnAndRow($posCol, self::$_offsetRow, $value);
+                    $sheetObj->setCellValue($writeCell, $value);
                 }
 
                 // Setting the column's width
@@ -439,8 +441,8 @@ class Helper
                 $posCol += $skip;
 
             } else {
-
-                $sheetObj->setCellValueByColumnAndRow($posCol, self::$_offsetRow, $cell);
+                $writeCell = self::colAndRow2CellName($posCol, self::$_offsetRow);
+                $sheetObj->setCellValue($writeCell, $cell);
                 
                 $posCol++;
             }
@@ -572,7 +574,7 @@ class Helper
         // Fetch data from the sheet
         $data = [];
         for ($col = $startColumn + 1; $col <= $columns; ++$col) {
-            $cell = $worksheet->getCellByColumnAndRow($col, self::$_offsetRow);
+            $cell = $worksheet->getCell($col, self::$_offsetRow);
             $value = $cell->getValue();
             // Timestamp option
             if ($options['timestamp'] && \PhpOffice\PhpSpreadsheet\Shared\Date::isDateTime($cell)) {
@@ -818,6 +820,19 @@ class Helper
             $r += pow(26, $i) * (ord($a[$l - $i - 1]) - 0x40);
         }
         return $r;
+    }
+
+    /**
+     * Column No and Col No to Cell Name
+     * @example
+     * (1, 1) => A1  (2,3) => B3
+     * @param int $col
+     * @param int $row
+     * @return string
+     */
+    public static function colAndRow2CellName($col, $row)
+    {
+        return self::num2alpha($col).$row;
     }
 
     /**
