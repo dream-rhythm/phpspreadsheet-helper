@@ -12,7 +12,7 @@ $objSheet = $objSpreadsheet->setActiveSheetIndex(0);
 $objSheet->setTitle('Sheet');
 $objSheet->setCellValue('A1', 'SN');
 // Inject PhpSpreadsheet Object and Sheet Object to Helper
-\nueip\phpSpreadsheet\Helper::newSpreadsheet($objSpreadsheet)
+\dream_rhythm\phpSpreadsheet\Helper::newSpreadsheet($objSpreadsheet)
     ->setSheet($objSheet)
     ->setRowOffset(1) // Point to 1nd row from 0
     ->addRows([
@@ -20,4 +20,4 @@ $objSheet->setCellValue('A1', 'SN');
         ['2'],
     ]);
     
-\nueip\phpSpreadsheet\Helper::output();
+\dream_rhythm\phpSpreadsheet\Helper::output();

@@ -2,7 +2,7 @@
 
 require __DIR__ . '/_config.php';
 
-\nueip\phpSpreadsheet\Helper::newSpreadsheet()
+\dream_rhythm\phpSpreadsheet\Helper::newSpreadsheet()
     ->addRow([['value'=>'ID', 'width'=>10], ['value'=>'Name', 'width'=>25], ['value'=>'Email', 'width'=>50]])
     ->addRows([
         ['1', 'Nick','myintaer@gmail.com'],

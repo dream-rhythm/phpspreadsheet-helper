@@ -1,6 +1,6 @@
 <?php
 
-namespace nueip\phpSpreadsheet;
+namespace dream_rhythm\phpSpreadsheet;
 
 use Exception;
 
@@ -10,9 +10,9 @@ use Exception;
  * @author      Nick Tsai <myintaer@gmail.com>
  * @version     1.3.6
  * @filesource 	PhpSpreadsheet <https://github.com/PHPOffice/PhpSpreadsheet>
- * @see         https://github.com/nueip/phpspreadsheet-helper
+ * @see         https://github.com/dream-rhythm/phpspreadsheet-helper
  * @example
- *  \nueip\phpSpreadsheet\Helper::newExcel()
+ *  \dream_rhythm\phpSpreadsheet\Helper::newExcel()
  *      ->addRow(['ID', 'Name', 'Email'])
  *      ->addRows([
  *          ['1', 'Nick','myintaer@gmail.com'],

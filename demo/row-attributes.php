@@ -35,7 +35,7 @@ $rowAttributes = [
     ],
 ];
 
-\nueip\phpSpreadsheet\Helper::newSpreadsheet()
+\dream_rhythm\phpSpreadsheet\Helper::newSpreadsheet()
     ->addRow([
         'Self Value', 
         null,  // This value will be overridden by row value attribute
