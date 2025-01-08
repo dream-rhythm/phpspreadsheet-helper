@@ -11,7 +11,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "phpoffice/phpspreadsheet": "^3|^1.28"
+        "phpoffice/phpspreadsheet": "^3"
     },
     "autoload": {
         "classmap": ["src/phpSpreadsheet"]
