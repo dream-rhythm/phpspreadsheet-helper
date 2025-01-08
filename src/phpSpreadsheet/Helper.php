@@ -15,7 +15,7 @@ use Exception;
  *  \dream_rhythm\phpSpreadsheet\Helper::newExcel()
  *      ->addRow(['ID', 'Name', 'Email'])
  *      ->addRows([
- *          ['1', 'Nick','myintaer@gmail.com'],
+ *          ['1', 'Nick','helloworld@example.com'],
  *          ['2', 'Eric','eric@.....'],
  *      ])
  *      ->output('My Excel');
@@ -727,19 +727,19 @@ class Helper
 
     /**
      * Set Style for all actived cells or set by giving range to the actived sheet
-     * 
-     * @param array Array containing style information for applyFromArray()
+     * *
      * @param string $range Cells range format
+     * @param array $style containing style information for applyFromArray()
      * @return self
      */
-    public static function setStyle($styleArray, $range=NULL)
+    public static function setStyle($range=NULL, $style=[])
     {
         $sheetObj = self::validSheetObj();
 
         $range = ($range) ? $range : self::getRangeAll();
 
         $sheetObj->getStyle($range)
-            ->applyFromArray($styleArray);
+            ->applyFromArray($style);
         
         return new static();
     }
