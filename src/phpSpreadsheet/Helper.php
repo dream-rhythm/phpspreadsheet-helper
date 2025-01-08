@@ -745,6 +745,24 @@ class Helper
     }
 
     /**
+     * Set NumberFormat for all actived cells or set by giving range to the actived sheet
+     * *
+     * @param string $range Cells range format
+     * @param string $numberFormat numberFormat for setFormatCode()
+     * @return self
+     */
+    public static function setNumberFormat($range=NULL, $numberFormat='General')
+    {
+        $sheetObj = self::validSheetObj();
+
+        $range = ($range) ? $range : self::getRangeAll();
+
+        $sheetObj->getStyle($range)->getNumberFormat()->setFormatCode($numberFormat);
+        
+        return new static();
+    }
+
+    /**
      * Set AutoSize for all actived cells or set by giving column range to the actived sheet
      * 
      * @param string $colAlphaStart Column Alpah of start
