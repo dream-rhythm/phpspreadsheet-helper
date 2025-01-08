@@ -10,7 +10,7 @@ Helper::newSpreadsheet()
 // Get the PhpSpreadsheet object created by Helper
 $objSpreadsheet = Helper::getSpreadsheet();
 $objSpreadsheet->getProperties()
-    ->setCreator("Nick Tsai")
+    ->setCreator("Nick Chen")
     ->setTitle("Office 2007 XLSX Document");
 // Get the actived sheet object created by Helper
 $objSheet = Helper::getSheet();

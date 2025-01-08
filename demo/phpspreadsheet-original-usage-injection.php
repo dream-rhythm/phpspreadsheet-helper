@@ -5,7 +5,7 @@ require __DIR__ . '/_config.php';
 // Get a new PhpSpreadsheet object
 $objSpreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet;
 $objSpreadsheet->getProperties()
-    ->setCreator("Nick Tsai")
+    ->setCreator("Nick Chen")
     ->setTitle("Office 2007 XLSX Document");
 // Get the actived sheet object from PhpSpreadsheet
 $objSheet = $objSpreadsheet->setActiveSheetIndex(0);

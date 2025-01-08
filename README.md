@@ -3,8 +3,8 @@ PHPSpreadsheet Helper
 
 PHP Excel Helper - Write and read Spreadsheet with easy way based on PhpSpreadsheet
 
-[![Latest Stable Version](https://poser.pugx.org/nueip/phpspreadsheet-helper/v/stable?format=flat-square)](https://packagist.org/packages/nueip/phpspreadsheet-helper)
-[![License](https://poser.pugx.org/nueip/phpspreadsheet-helper/license?format=flat-square)](https://packagist.org/packages/nueip/phpspreadsheet-helper)
+[![Latest Stable Version](https://poser.pugx.org/dream-rhythm/phpspreadsheet-helper/v/stable?format=flat-square)](https://packagist.org/packages/dream-rhythm/phpspreadsheet-helper)
+[![License](https://poser.pugx.org/dream-rhythm/phpspreadsheet-helper/license?format=flat-square)](https://packagist.org/packages/dream-rhythm/phpspreadsheet-helper)
 
 This library is a helper that encapsulate [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) ([Documentation](https://phpspreadsheet.readthedocs.io/en/develop/)) for simple usage.
 
@@ -118,10 +118,7 @@ REQUIREMENTS
 This library requires the following:
 
 - Dependent on [PhpSpreadsheet v3](https://phpspreadsheet.readthedocs.io/en/develop/#software-requirements)
-  - PHP 8.3.0+
-  - PHP extension php-zip enabled
-  - PHP extension php-xml enabled
-  - PHP extension php-gd2 enabled (if not compiled in)
+
 
 ---
 
@@ -130,7 +127,7 @@ INSTALLATION
 
 Run Composer in your project:
 
-    composer require nueip/phpspreadsheet-helper
+    composer require dream-rhythm/phpspreadsheet-helper
     
 Then you could call it after Composer is loaded depended on your PHP framework:
 
@@ -295,7 +292,7 @@ This helper is flexible that you could inject or extract original PhpSpreadsheet
 // Get a new PhpSpreadsheet object
 $objSpreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet;
 $objSpreadsheet->getProperties()
-    ->setCreator("Nick Tsai")
+    ->setCreator("Nick Chen")
     ->setTitle("Office 2007 XLSX Document");
     
 // Get the actived sheet object from PhpSpreadsheet
@@ -326,7 +323,7 @@ Helper::newSpreadsheet()
 // Get the PhpSpreadsheet object created by Helper
 $objSpreadsheet = Helper::getSpreadsheet();
 $objSpreadsheet->getProperties()
-    ->setCreator("Nick Tsai")
+    ->setCreator("Nick Chen")
     ->setTitle("Office 2007 XLSX Document");
     
 // Get the actived sheet object created by Helper

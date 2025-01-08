@@ -7,8 +7,8 @@ use Exception;
 /**
  * PhpSpreadsheet Helper
  * 
- * @author      Nick Tsai <myintaer@gmail.com>
- * @version     1.3.6
+ * @author      Nick Chen <mailtonick1997@gmail.com>
+ * @version     1.0.0
  * @filesource 	PhpSpreadsheet <https://github.com/PHPOffice/PhpSpreadsheet>
  * @see         https://github.com/dream-rhythm/phpspreadsheet-helper
  * @example
@@ -62,19 +62,6 @@ class Helper
      */
     private static $_keyRangeMap;
 
-    /**
-     * Extension list for reader
-     */
-    private static $_readerExtensions = [
-        'Excel5' => '.xls',
-        'Excel2003XML' => '.xls',
-        'Excel2007' => '.xlsx',
-        'OOCalc' => '.ods',
-        'SYLK' => '.slk',
-        'Gnumeric' => '.gnumeric',
-        'CSV' => '.csv',
-        'HTML' => '.html',
-    ];
 
     /**
      * Extension list for writer
@@ -159,7 +146,7 @@ class Helper
     /** 
      * Set an active PhpSpreadsheet Sheet
      * 
-     * @param object|int $sheet PhpSpreadsheet sheet object or index number
+     * @param object|int|null $sheet PhpSpreadsheet sheet object or index number
      * @param string $title Sheet title
      * @param bool $normalizeTitle Auto-normalize title rule 
      * @return self
@@ -218,7 +205,7 @@ class Helper
      * @param bool $autoCreate 
      * @return object PhpSpreadsheet Sheet object
      */
-    public static function getSheet($identity=null, $autoCreate=false)
+    public static function getSheet($identity=NULL, $autoCreate=false)
     {
         // Deafult is get active sheet
         if (!$identity) {
@@ -243,7 +230,7 @@ class Helper
             // Auto create if not exist
             if (!$objSheet && $autoCreate) {
                 // Create a new sheet by name
-                $objSheet = self::setSheet(null, $identity, true)
+                $objSheet = self::setSheet(NULL, $identity, true)
                     ->getSheet();
             }
         }
@@ -323,7 +310,7 @@ class Helper
      * @param array Row attributes refers to cell attributes
      * @return self
      */
-    public static function addRow($rowData, $rowAttributes=null)
+    public static function addRow($rowData, $rowAttributes=NULL)
     {
         $sheetObj = self::validSheetObj();
         
@@ -341,16 +328,16 @@ class Helper
                 // Attr map: key as variable & value as value
                 $attributeMap = [
                     // Basic attributes
-                    'key' => null,
-                    'value' => null,
+                    'key' => NULL,
+                    'value' => NULL,
                     // Merging
                     'col' => 1,
                     'row' => 1,
                     'skip' => 1,
                     // Cell Format
-                    'width' => null,
-                    'style' => null,
-                    'dataType' => null,
+                    'width' => NULL,
+                    'style' => NULL,
+                    'dataType' => NULL,
                 ];
 
                 // Row attributes inheriting process (Based on default value of map)
@@ -401,7 +388,7 @@ class Helper
                 // Merge handler
                 $colspan = & $col;
                 $rowspan = & $row;
-                $mergeVal = null;
+                $mergeVal = NULL;
                 if ($colspan>1 || $rowspan>1) {
                     $posColLast = $posCol;
                     $posCol = $posCol + $colspan - 1;
@@ -458,7 +445,7 @@ class Helper
      * @param array Row attributes refers to cell attributes
      * @return self
      */
-    public static function addRows($data, $rowAttributes=null)
+    public static function addRows($data, $rowAttributes=NULL)
     {
          foreach ($data as $key => $row) {
 
@@ -537,7 +524,7 @@ class Helper
      * Get data of a row from the actived sheet of PhpSpreadsheet
      * 
      * @param bool $toString All values from sheet to be string type
-     * @param bool $options [
+     * @param array $options [
      *  row (int) Ended row number
      *  column (int) Ended column number
      *  timestamp (bool) Excel datetime to Unixtime
@@ -546,7 +533,7 @@ class Helper
      * @param callable $callback($cellValue, int $columnIndex, int $rowIndex)
      * @return array Data of Spreadsheet
      */
-    public static function getRow($toString=true, $options=[], callable $callback=null)
+    public static function getRow($toString=true, $options=[], callable $callback=NULL)
     {
         $worksheet = self::validSheetObj();
 
@@ -598,7 +585,7 @@ class Helper
      * Get rows from the actived sheet of PhpSpreadsheet
      * 
      * @param bool $toString All values from sheet to be string type
-     * @param bool $options [
+     * @param array $options [
      *  row (int) Ended row number
      *  column (int) Ended column number
      *  timestamp (bool) Excel datetime to Unixtime
@@ -607,7 +594,7 @@ class Helper
      * @param callable $callback($cellValue, int $columnIndex, int $rowIndex)
      * @return array Data of Spreadsheet
      */
-    public static function getRows($toString=true, Array $options=[], callable $callback=null)
+    public static function getRows($toString=true, Array $options=[], callable $callback=NULL)
     {
         $worksheet = self::validSheetObj();
 
