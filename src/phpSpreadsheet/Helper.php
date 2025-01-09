@@ -561,7 +561,7 @@ class Helper
         // Fetch data from the sheet
         $data = [];
         for ($col = $startColumn + 1; $col <= $columns; ++$col) {
-            $cell = $worksheet->getCell($col, self::$_offsetRow);
+            $cell = $worksheet->getCell(self::colAndRow2CellName($col, self::$_offsetRow));
             $value = $cell->getValue();
             // Timestamp option
             if ($options['timestamp'] && \PhpOffice\PhpSpreadsheet\Shared\Date::isDateTime($cell)) {
