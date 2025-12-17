@@ -11,9 +11,10 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "phpoffice/phpspreadsheet": "^3"
+        "phpoffice/phpspreadsheet": "^3|^4|^5"
     },
     "autoload": {
         "classmap": ["src/phpSpreadsheet"]
     }
 }
+
