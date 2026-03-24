@@ -533,7 +533,7 @@ class Helper
      * @param callable $callback($cellValue, int $columnIndex, int $rowIndex)
      * @return array Data of Spreadsheet
      */
-    public static function getRow($toString=true, $options=[], callable $callback=NULL)
+    public static function getRow($toString=true, $options=[], ?callable $callback=NULL)
     {
         $worksheet = self::validSheetObj();
 
@@ -594,7 +594,7 @@ class Helper
      * @param callable $callback($cellValue, int $columnIndex, int $rowIndex)
      * @return array Data of Spreadsheet
      */
-    public static function getRows($toString=true, Array $options=[], callable $callback=NULL)
+    public static function getRows($toString=true, Array $options=[], ?callable $callback=NULL)
     {
         $worksheet = self::validSheetObj();
 
